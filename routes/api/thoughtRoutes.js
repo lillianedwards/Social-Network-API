@@ -21,6 +21,10 @@ router
 
 // http://localhost:3001/api/thoughts/:thoughtId/reactions
 router
-.route('/:userId/thought/:thoughtId/reactions')
+.route('/:thoughtId/reactions')
 .post(createReaction)
-.delete(deleteReaction)
+
+// http://localhost:3001/api/thoughts/:thoughtId/reactions/:reactionId
+router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction)
+
+module.exports = router;
